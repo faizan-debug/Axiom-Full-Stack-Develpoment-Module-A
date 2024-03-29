@@ -17,8 +17,32 @@ body {
     margin: 0;
 }
 
+
+
+.video-container video {
+    position: absolute;
+    top: 43.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 2, 19, 0.9);
+}
+
 .movie-container {
     margin: 20px 0;
+    z-index: 10;
+}
+
+.movie-container:active {
+    transform: scale(1.2);    
 }
 
 .movie-container select {
@@ -34,7 +58,7 @@ body {
 }
 
 .seat {
-    background-color: #5885AF;
+    background-color: #1e81b0;
     height: 15px;
     width: 15px;
     margin: 5px;
@@ -43,11 +67,11 @@ body {
 }
 
 .seat.selected {
-    background-color: #add41e;
+    background-color: #e23f2e;
 }
 
 .seat.occupied {
-    background-color: rgb(155, 83, 223);
+    background-color:#eab676;
 }
 
 .seat:nth-of-type(2) {
@@ -69,20 +93,21 @@ body {
 }
 
 .legend {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(6, 15, 43, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
     color: #5885AF;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+    z-index: 10;
 }
 
 .legend li {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    margin: 0 10px;   
 }
 
 .legend li small {
@@ -109,6 +134,7 @@ body {
 
 p.text {
     margin: 5px 0;
+    z-index: 10;
 }
 
 p.text span {
