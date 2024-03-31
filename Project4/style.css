@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+
+}
+
+h1 {
+    color: darkgreen;
+    font-size: 250%;
+}
+
+p {
+    text-align: center;
+    font-size: 110%;
+}
+
+
+/*.btn {
+    color: white;
+    background-color: darkgreen;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    display: inline-block;
+    width: 20%;
+    font-family: inherit;
+    border: 0;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}*/
+
+.btn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: darkgreen;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 12px;
+    width: 180px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  button:active {
+
+    transform: scale(0.98);
+}
+
+.currency {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency select {
+    padding: 10px 20px 10px 10px;
+    border: 3px solid darkgreen;
+    font-size: 20px;
+    background: white;
+    
+}
+
+.currency input {
+    padding: 10px 20px 10px 10px;
+    border: 3px solid darkgreen;
+    font-size: 20px;
+    background: white;
+    text-align: right;
+    left: 20px;
+
+}
+
+.swap-rate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rate {
+    color: darkgreen;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+select:focus, input:focus, button:focus {
+    outline: 0;
+}
