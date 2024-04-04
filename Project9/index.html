@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <!--Main Heading-->
+    <h2>Expense Tracker</h2>
+    <!--Overall Container-->
+    <div class="container">
+        <h4>Account Balance</h4>
+        <h1 id="balance">$0.00</h1>
+            <!--Credit and Debit Balace Container-->
+            <div class="credit-debit-container">
+                <!--Credit Balance-->
+            <div>
+                <h4>Credit</h4>
+                <p id="money-credit" class="money credit">+$0.00</p>
+            </div>
+            <!--Debit Balance-->
+            <div>
+                <h4>Debit</h4>
+                <p id="money-debit" class="money debit">-$0.00</p>
+            </div>
+        </div>
+        <!--Transaction History-->
+        <h3>History</h3>
+        <!--List of Transactions-->
+        <ul id="list" class="list">
+            <li class="credit">Salary <span>+$5,000</span> <button class="delete-btn">X</button> </li>
+            <li class="credit">Dinner Party <span>-$1,000</span> <button class="delete-btn">X</button> </li>
+        </ul>
+        <!--Form to add  new trasaction-->
+        <h3>Add Transaction</h3>
+        <from id="add-from">
+            <div class="form-control">
+                <label for="reason">Description</label>
+                <input type="text" id="reason" placeholder="Enter reason for transaction.">
+            </div>
+            <div class="form-control">
+                <label for="amount">Transaction Amount</label>
+                <input type="number" id="amount" placeholder="Enter transaction amount.">
+            </div>
+            <button class="btn">Add Transaction</button>
+        </from>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
