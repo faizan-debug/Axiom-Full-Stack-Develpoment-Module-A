@@ -6,7 +6,6 @@ const resultsHeading = document.getElementById('results-heading');
 const meals = document.getElementById('meals');
 const selectedMeal = document.getElementById('selected-meal');
 
-
 // Function to search the meal using the API
 function searchMeal(e) {
     // Prevent form submission and redirect
@@ -29,7 +28,7 @@ function searchMeal(e) {
                     meals.innerHTML = data.meals.map( meal => `
                         <div class="meal">
                             <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-                            <div class="meal-info" data-mealID="${meal.idMeal}">
+                            <div class="meal-info" data-mealid="${meal.idMeal}">
                                 <h3>${meal.strMeal}</h3>
                             </div>
                         </div>
@@ -42,11 +41,34 @@ function searchMeal(e) {
     } else {
         alert('Please enter search keyword')
     };
-    // Remove previous selected meal info
-    selectedMeal.innerHTML = '';
+   
 };
+
+    
+        
+
 
 
 // Event Listeners
 // 1. Listen for form submit
 submit.addEventListener('submit', searchMeal)
+
+// 2. Listen for click on meals 
+meals.addEventListener('click', e => {
+    // Find and return only if clicked on a meal-info div
+    const mealInfo = e.path.find(item => {
+        if (item.classList) {
+            return item.classList.contains('meal-info');
+        } else {
+            return false;
+        }
+    });
+
+     // Check if mealInfo exists
+     if (mealInfo) {
+        // Get the data-mealid attribute
+        const mealId = mealInfo.getAttribute('data-mealid');
+        // Fetch details of meal
+        getMeal(mealId);
+    }
+});
