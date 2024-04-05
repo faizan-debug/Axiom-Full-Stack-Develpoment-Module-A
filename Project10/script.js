@@ -119,6 +119,38 @@ playBtn.addEventListener('click', () => {
 });
 
 
+// //Function for volume button
+// function volBtn(direction) {
+//     // Get the current volume
+//     let currentVolume = volume.value;
+
+//     // Adjust the volume based on the direction
+//     let newVolume = parseFloat(currentVolume) + (0.1 * direction);
+
+//     // Ensure the volume remains within the valid range (0 to 1)
+//     newVolume = Math.max(0, Math.min(1, newVolume));
+
+//     // Set the new volume
+//     volume.value = newVolume;
+
+//     // Update the volume progress bar
+//     progressVol.style.width = (newVolume * 100) + '%';
+    
+// }
+
+// function updateVolume() {
+//     // Get the new volume from the volume input
+//     let newVolume = volume.value;
+
+//     // Update the volume progress bar
+//     progressVol.style.width = (newVolume * 100) + '%';
+
+//     // Set the volume of the audio element
+//     document.getElementById('myAudio').volume = newVolume;
+// }
+
+
+
 
 
 // 2. Listen for click on the previousBtn
@@ -136,5 +168,7 @@ progress.addEventListener('click', setProgress);
 // 6. Listen for end of playback for current track
 audio.addEventListener('ended', nextTrack);
 
+// 6. Listen for click on volume
+audio.addEventListener('click', updateVolume);
 
 
