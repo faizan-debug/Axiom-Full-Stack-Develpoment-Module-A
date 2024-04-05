@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Demo style.css">
-    <meta charset="UTF-8">
-    <title>Welcome to coolio85.com</title>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-    
-    <script src="Demo script.js"></script>
+    <title>Video Player</title>
+    <link rel="stylesheet" href="Demo style.css"> <!-- Link to your CSS file for styling -->
 </head>
 <body>
-    <div id="gradient">
-        <p>This is Animated Background</p>
+    <div class="video-player">
+        <video src="your-video-file.mp4" class="video" controls></video>
+        <div class="controls">
+            <button class="play">Play</button>
+            <button class="pause">Pause</button>
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
     </div>
 </body>
-</html>

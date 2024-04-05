@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #BDD5EA;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1000px; /* Maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    width: 750px; /* Adjust width as needed */
+    height: 450px; /* Adjust height as needed */
+    border: 1px solid #ccc; /* Base border color */
+    border-width: 3px; /* Border width */
+    border-style: inset; /* Inset border style for 3D effect */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    /*background-color: rgb(26, 25, 25);*/
+    animation: animatedBackground 10s linear infinite; /* Adjust duration as needed */
+    background: linear-gradient(45deg, #FFC0CB, #87CEEB, #FFD700, #7FFF00); /* Gradient colors */
+    background-size: 400% 400%; /* Adjust the size based on the number of colors */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    margin: 100px, 0;
+    z-index: 10;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+    
+}
+
+.album-art {
+    position: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 180px;
+    left: 305px;
+    
+    
+}
+
+.album-art img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.container.play img {
+    animation-play-state: running;
+}
+
+.nav {
+    display: flex;
+    left: 50%;
+    transform: translate(8%, -8%);
+    z-index: 1;
+    
+}
+
+.nav-btn {
+    background-color: white;
+    border: 0;
+    color: #495867;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-btn-large {
+    font-size: 24px;
+}
+
+.vol-btn {
+    padding-left: 50%;
+}
+
+.info {
+    background-color: #495867;
+    border-radius: 10px;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    transform: translateY(0%);
+    transition: transform 1s ease-in, opacity 1s ease-in;
+    opacity: 0;
+    z-index: 0;
+    color: white;
+
+
+}
+
+.container.play .info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.info h4 {
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 100px;
+    color: white;
+    align-items: center;
+}
+
+.progress {
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    height: 5px;
+    width: 80%;
+
+
+}
+
+.progress-bar {
+    background-color: #7f95a8;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Music Player</title>
+</head>
+<body>
+   
+<div class="main-container">
+    <!-- Project Title -->
+    <h1>Music Player</h1>
+    <!-- Container for music player -->
+    
+    <div class="container" id="container">
+        <!-- Container for info about the current song -->
+        <div class="info">
+            <!-- Placeholder: Name of current song will be added here -->
+            <h4 id="song-title">Ertugrul</h4>
+            <!-- Placeholder: Progress bar showing progress of playback for current song -->
+            <div class="progress" id="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <!-- Placeholder: volume bar showing scale of volume -->
+            <div class="progress2" id="progress2">
+                <div class="volume-bar" id="volume-bar"></div>
+            </div>
+        </div>
+        <!-- This is the actual audio player -->
+        <audio src="music/YamaInstr.mp3" id="audio"></audio>
+        <!-- Album art -->
+        <div class="album-art">
+            <img src="images/YamaInstr.jpg" alt="album-art" id="album-art" />
+        </div>
+        <!-- Navigation buttons to change songs -->
+        <div class="nav">
+            <!-- Button: change to previous song -->
+            <button id="previous" class="nav-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <!-- Button: play / pause song -->
+            <button id="play" class="nav-btn nav-btn-large">
+                <i class="fas fa-play"></i>
+            </button>
+            <!-- Button: change to next song -->
+            <button id="next" class="nav-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+            <!-- Button: change to volume -->
+            <button id="volume" class="nav-btn vol-btn">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+        </div>
+    </div>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
