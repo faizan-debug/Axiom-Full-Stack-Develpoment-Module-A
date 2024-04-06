@@ -12,12 +12,21 @@ body {
     height: 80vh;
     margin: 0;
     overflow: hidden;
+    font-size: 23px;
 
 }
 
 h1 {
     margin: 20px 0 0;
+    animation: blink 1s infinite;
 }
+
+@keyframes blink {
+    0% { opacity: 1; } /* Start with full opacity */
+    50% { opacity: 0; } /* Fade out at halfway */
+    100% { opacity: 1; } /* Return to full opacity */
+}
+
 
 .game-container {
     padding: 20px 30px;
@@ -25,15 +34,25 @@ h1 {
     margin: auto;
     height: 300px;
     width: 400px;
+    
 }
 
 .incorrect-letters-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: right;
+    
+    position: fixed; /* Fixed positioning to keep it on the right side */
+    top: 50%; /* Adjust as needed to position vertically */
+    right: 8%; /* Align to the right side */
+    transform: translateY(-50%); /* Center vertically */
+    width: 300px; /* Adjust width as needed */
+    background-color: #f0f0f0; /* Background color */
+    border: 2px solid #ccc; /* Border style */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow */
+    /* Ensure the container appears above other content */
+    color: black;
+    
+
 }
 
 .incorrect-letters-container p {
@@ -50,6 +69,7 @@ h1 {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+    top: 110%;
 }
 
 .letter {
