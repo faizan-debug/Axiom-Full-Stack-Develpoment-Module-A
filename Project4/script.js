@@ -1,12 +1,10 @@
 // Get DOM Elements
-
 const currencyOne = document.getElementById('currency-one');
 const amountCurrencyOne = document.getElementById('amount-one');
 const currencyTwo = document.getElementById('currency-two');
 const amountCurrencyTwo = document.getElementById('amount-two');
 const rate = document.getElementById('rate');
 const swap = document.getElementById('swap');
-
 
 // Fetch Exchange Rates & Update the DOM
 function calculate() {
@@ -15,26 +13,20 @@ function calculate() {
     const currencyTwoCode = currencyTwo.value;
 
     // Send Request to ExchangeRate-API for conversion rates for currency one
-    fetch(`https://v6.exchangerate-api.com/v6/26138f613346dae685c8aeab/pair/${currencyOneCode}/${currencyTwoCode}`)
-        .then (res => res.json())
-        .then (data => {
-
+    fetch(`https://v6.exchangerate-api.com/v6/a43d02c063c1303f1c06c071/pair/${currencyOneCode}/${currencyTwoCode}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.conversion_rate);
             // Get the Conversion Rate from Currency One to Currency Two
             const conversionRate = data.conversion_rate;
-
             // Update the DOM to display the conversion rate
             rate.innerText = `1 ${currencyOneCode} = ${conversionRate} ${currencyTwoCode}`;
-
-            //Update the Currency Two Amount
-            amountCurrencyTwo.value = (amountCurrencyOne.value * conversionRate).toFixed(2);
-
-
+            // Formatting Currency Two Amount
+            const amount2 = new Intl.NumberFormat('en-US', { style: 'currency', currency: currencyTwoCode }).format((amountCurrencyOne.value * conversionRate).toFixed(2));
+            // Updating DOM
+            amountCurrencyTwo.value = amount2;
         });
-
-
 };
-
-
 
 // Event Listeners
 // Recalculate exchange rate when currency 1 changes
@@ -56,8 +48,6 @@ swap.addEventListener('click', () => {
     // Recalculate exchange rate after swap
     calculate();
 })
-
-
 
 // Execute calculate function on page load
 calculate();

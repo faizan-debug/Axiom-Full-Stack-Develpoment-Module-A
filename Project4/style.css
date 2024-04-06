@@ -101,21 +101,24 @@ p {
 
 .currency select {
     padding: 10px 20px 10px 10px;
-    border: 3px solid darkgreen;
+    border: 2px solid darkgreen;
     font-size: 20px;
     background: white;
+    margin-right: 50px;
+    
     
 }
 
 
 
 .currency input {
-    padding: 10px 20px 10px 10px;
-    border: 3px solid darkgreen;
+    padding: 10px 0px 10px 10px;
+    border: 2px solid darkgreen;
     font-size: 20px;
     background: white;
     text-align: right;
     left: 20px;
+    padding-left: 50px;
 
 }
 
