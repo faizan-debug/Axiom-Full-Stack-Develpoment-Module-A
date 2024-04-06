@@ -2,9 +2,11 @@
 
 * {
     box-sizing: border-box;
+    color: #030d11;
 }
 body {
-    background-color: #E1E8EB;
+    background-color: #F7EAD4;
+    background-color: opacity;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,11 +14,27 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background-image: url('Images/expense.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background-color:rgba(247, 234, 212, 0.95); /* Adjust the opacity here */
+    
 }
 
 .container {
     margin: 30px auto;
     width: 350px;
+    z-index: 1;
 }
 
 h1 {
@@ -24,10 +42,24 @@ h1 {
     margin: 0;
 }
 
+h2 {
+    font-size: xx-large;
+    background-color: #0F4C81;
+    padding: 5px 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+    z-index: 1;
+}
+
+body h2 {
+    color: #f1f8de;
+}
+
 h3 {
    margin: 40px 0 10px;
    padding-bottom: 10px;
    border-bottom: 1px solid #343A40;
+   
 
 }
 
@@ -42,6 +74,10 @@ h4 {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+}
+
+body div.container.credit-debit-container {
+    color: #030d11;
 }
 
 .credit-debit-container > div {
