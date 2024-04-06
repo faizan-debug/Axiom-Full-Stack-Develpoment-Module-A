@@ -1,36 +1,28 @@
-.video-player {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 640px; /* Adjust width as needed */
-    height: 360px; /* Adjust height as needed */
-    border: 1px solid #ccc; /* Border for the video player */
-    
-}
-
-.video {
-    width: 100%;
-    height: 100%;
-}
-
-.controls {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.controls button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.button {
+    background-color: #d9d9d9; /* Button color */
+    border: 1px solid #a6a6a6; /* Button border */
+    color: #333; /* Button text color */
+    padding: 15px 20px; /* Button padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
     cursor: pointer;
+    border-radius: 8px; /* Button border radius */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transition */
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), /* Inner shadow */
+                inset 0 -2px 0 rgba(0,0,0,0.1),
+                0 2px 2px rgba(0,0,0,0.1); /* Outer shadow */
 }
 
-.controls button:hover {
-    background-color: #0056b3;
+.button:hover {
+    background-color: #b3b3b3; /* Button color on hover */
+}
+
+.button:active {
+    transform: translateY(2px); /* Pressed effect */
+    box-shadow: none; /* Remove shadow on press */
 }
