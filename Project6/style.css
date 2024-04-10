@@ -13,7 +13,7 @@
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
-    transition: trabsform 0.5s ease;
+    
 }
 
 body.show-nav {
@@ -30,7 +30,7 @@ nav {
     width: 200px;
     height: 100vh;
     z-index: 100;
-    transform: translateX(-100%);
+    height: 1000px;
 }
 
 nav .logo {
@@ -39,8 +39,8 @@ nav .logo {
 }
 
 nav .logo img {
-    height: 75px;
-    width: 75px;
+    height: 180px;
+    width: 180px;
     border-radius: 100%;
 }
 
@@ -75,6 +75,7 @@ header {
     position: relative;
     padding: 40px 15px;
     text-align: center;
+    padding-left: 150px;
 }
 
 header h1 {
@@ -112,13 +113,64 @@ button:focus {
 }
 
 .container {
-    padding: 15px;
+    padding-left: 250px;
+    padding-top: 50px;
     margin: 0 auto;
     max-width: 100%;
-    width: 800px;
+    width:1200px;
+    position: relative;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 17px;
+    height: 1000px;
+    
+
 }
 
-.modal-container {
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 112, 147, 0.7); /* Adjust the color and opacity as needed */
+}
+
+.content {
+    position: relative; /* Ensure content stays above the video */
+    z-index: 1; /* Ensure content is above the video */
+    /* Add additional styles for your content */
+}
+
+.container h2 {
+    background-color: #227093;
+   
+    color: white;
+    padding: 5px;
+    padding-left: 10px;
+   
+}
+
+header h2 {
+    position: relative; /* Ensure content stays above the video */
+    z-index: 1; /* Ensure content is above the video */
+}
+
+header p {
+    position: relative; /* Ensure content stays above the video */
+    z-index: 1; /* Ensure content is above the video */
+}
+
+/* .modal-container {
     background-color: rgba(0,0,0,0.6);
     position: fixed;
     top: 0;
@@ -159,16 +211,16 @@ button:focus {
 .modal-header h3 {
     margin: 0;
     /* border-bottom: 1px solid var(--secondary-color); */
-    justify-content: center;
+   /* justify-content: center;
     align-content: center;
 }
 
 .modal-content {
     padding: 20px;
     
-}
+} */
 
-.modal-form div {
+/*.modal-form div {
     margin: 15px 0;
 }
 
