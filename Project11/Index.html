@@ -2,38 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>My Website</title>
 </head>
 <body>
-    <h1>Website Newsfeed</h1>
+    <h1>Website News Feed</h1>
+    <!-- Add a input field for filtering content -->
     <div class="filter-container">
-        <input type="text" class="filter" id="filter" placeholder="Filter your content">
+        <input type="text" class="filter" id="filter" placeholder="Filter content" />
     </div>
-    <div class="news-feed-container">
-        <div class="post">
-            <div class="post-id">1</div>
-            <div class="post-content">
-                <h2 class="post-title">First Post</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate quis nobis omnis libero aspernatur, dolor similique dolorum obcaecati nulla ipsam odio a delectus beatae labore, accusamus in quaerat odit. Rem.</p>
-            </div>
-        </div>
-        <div class="post">
-            <div class="post-id">2</div>
-            <div class="post-content">
-                <h2 class="post-title">Second Post</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate quis nobis omnis libero aspernatur, dolor similique dolorum obcaecati nulla ipsam odio a delectus beatae labore, accusamus in quaerat odit. Rem.</p>
-            </div>
-        </div>
-    </div>
-    <div class="loader">
+    <!-- Section for News Feed Posts -->
+    <div class="news-feed-container" id="news-feed-container"></div>
+    <!-- This is the Loader to display animation while API is fetching data -->
+    <div class="loader" id="loader">
         <div class="circle"></div>
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
-
-    <script src="script.js"></script>
     
+    <script src="script.js"></script>
 </body>
 </html>
