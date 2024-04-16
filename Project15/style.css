@@ -110,32 +110,3 @@ ul.songs li {
 .centered button {
     margin: 15px;
 }
-
-.container {
-    margin: 30px auto;
-    max-width: 100%;
-    width: 500px;
-}
-
-ul.songs {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.songs li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.centered {
-    display: flex;
-    justify-content: center;
-
-}
-
-.centered button {
-    margin: 15px;
-    
-}

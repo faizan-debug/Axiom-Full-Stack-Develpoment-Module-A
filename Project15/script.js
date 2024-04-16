@@ -20,7 +20,7 @@ async function searchSongs(term) {
 function showData(data) {
     //Dislay first set of songs in  the  DOM
     results.innerHTML = `
-        <ul>
+        <ul class="songs">
             ${data.data.map( 
                 song => `
                 <li>
@@ -32,29 +32,48 @@ function showData(data) {
             }
         </ul>
     `;
+        }
 
-    //Add pagination if required
-    if ( data.prev || data.next ) {
-        pagination.innerHTML = `
-            ${data.prev ? `<button class="btn" onClick="getMoreSongs('${data.prev}')">Prev</button>` : '' }
-            ${data.next ? `<button class="btn" onClick="getMoreSongs('${data.next}')">Next</button>` : ''}
-            `;
-    } else {
-        pagination.innerHTML = '';
-    }
+//     //Add pagination if required
+//     if ( data.prev || data.next ) {
+//         pagination.innerHTML = `
+//             ${data.prev ? `<button class="btn btn1" onClick="getMoreSongs('${data.prev}')">Prev</button>` : '' }
+//             ${data.next ? `<button class="btn btn1" onClick="getMoreSongs('${data.next}')">Next</button>` : ''}
+//             `;
+//     } else {
+//         pagination.innerHTML = '';
+//     }
 
 
-};
+// };
 
 
   //Function to get the prev or next songs
   async function getMoreSongs(url){
     const res = await fetch(`https://api.allorigins.win/raw?url=/${url}`); 
-    console.log(res);
+   
     const data = await res.json();
     
     showData(data);
-};
+}
+
+//Function to get lyrics
+async function getLyrics(artist, title) {
+    
+    const res = await fetch(`https://api.allorigins.win/raw?url=/${api}/v1/${artist}/${title}`); 
+    
+    const data = await res.json();
+   
+    
+    const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '</br>');
+
+    results.innerHTML = `
+    <h2>${artist} - ${title}</h2>
+    <p>${lyrics}</p>
+    `;
+
+    pagination.innerHTML = '';
+}
 
 
 
@@ -74,3 +93,16 @@ form.addEventListener('submit', e => {
     }
 })
 
+//Event Listener to get lyrics
+results.addEventListener('click', e => {
+    //Find out what was clicked
+    const clickedElement = e.target;
+    //Check if clicked element was buton
+    if (clickedElement.tagName === 'BUTTON') {
+        //Get artist name and song title from HTML5
+        const artist = clickedElement.getAttribute('data-artist');
+        const title = clickedElement.getAttribute('data-title');
+        //Now fetch the lyrics
+        alert('Sorry lyrics cannnot be fetched at this time due to license issue');
+    }
+})
